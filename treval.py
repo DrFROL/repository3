@@ -26,22 +26,15 @@ for i in f:
     if int(a[0]) == 3:
         travels3 += 1
         colvo_m3 += int(a[6])
-    if a[2] in otprav_punkt:
-        pass
-    else:
-        otprav_punkt[a[2]] = 0
-        colvo1 += 1
+
+    otprav_punkt[a[2]] = 0
 
     for j in otprav_punkt:
         if a[2] == j:
             otprav_punkt[j] += int(a[6])
 
-    if a[3] in prin_punkt:
-        pass
-    else:
-        prin_punkt[a[3]] = 0
-        prin_punkt2[a[3]] = 0
-        colvo2 += 1
+    prin_punkt[a[3]] = 0
+    prin_punkt2[a[3]] = 0
 
     for j in otprav_punkt:
         if a[3] == j:
@@ -59,8 +52,8 @@ else:
 print(colvo_m)
 print(way)
 print(otprav_punkt)
-print(colvo1)
+print(len(otprav_punkt))
 print(prin_punkt)
-print(colvo2)
+print(len(prin_punkt))
 print(max(prin_punkt2, key=prin_punkt2.get))
 f.close()
